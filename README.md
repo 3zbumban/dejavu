@@ -3,7 +3,8 @@
 ## Purpose
 
 This fork attempts to:
-
+*   [WIP] Support other formats
+*   [WIP] Jsonnize
 *   [:heavy_check_mark:] Fix bugs (fixes critical numpy one).
 *   [:heavy_check_mark:] Use SQLAlchemy to support PostgreSQL, SQLite3 DBs as well.
 *   [:heavy_check_mark:] Use Pipenv to allow db credentials via .env file
