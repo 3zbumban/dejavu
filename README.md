@@ -43,14 +43,3 @@ python dejavu.py --recognize file sometrack.mp3
 
 You can keep the database url saved in an .env file and use pipenv. As
 well as specify it via the `--dburl` command line argument.
-
-## Migrating from worldveil/dejavu
-
-If you already have a live database that used to follow worldveil/dejavu
-database structure, you'll have to migrate your database
-by renaming:
-
-*   `song_id` to `id`
-*   `song_name` to `name`
-
-in the `songs` table.
