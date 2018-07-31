@@ -1,5 +1,5 @@
 # dejavu3
-
+[How it works](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)
 ## Purpose
 
 This fork attempts to:
