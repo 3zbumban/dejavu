@@ -9,6 +9,6 @@ So far Dejavu has only been tested on Unix systems.
 * [`pydub`](http://pydub.com/), a Python `ffmpeg` wrapper
 * [`setuptools`](https://setuptools.readthedocs.io/en/latest/) python setuptools
 * [`scipy`](http://www.scipy.org/), used in peak finding algorithms
-* [ffmpeg](https://www.ffmpeg.org/), dealing with media files
+* [ffmpeg](https://www.ffmpeg.org/), dealing with media files <br>
 maybe use a virtualenv ([howto?](http://www.pythoncentral.io/how-to-install-virtualenv-python/)):
 
