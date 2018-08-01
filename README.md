@@ -1,6 +1,6 @@
 # dejavu3
 * [**How it works**](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)
-* **Read** [INSTALLATION.md](INSTALLATION.md)
+* **Read** [**INSTALLATION.md**](INSTALLATION.md)
 ## This fork attempts to:
 * [:heavy_check_mark:] Fix bugs with SQLite.
 * [:heavy_check_mark:] Python3 focus
