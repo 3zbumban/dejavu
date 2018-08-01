@@ -3,7 +3,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from pydub import AudioSegment
 from dejavu.decoder import path_to_songname
-from dejavu import Dejavu
+from dejavu.dejavu import Dejavu
 from dejavu.fingerprint import *
 import traceback
 import fnmatch

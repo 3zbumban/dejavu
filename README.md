@@ -1,18 +1,18 @@
 # dejavu3
 
 ## Purpose
-
 This fork attempts to:
-*   [WIP] Support other formats
-*   [WIP] Jsonnize
-*   [:heavy_check_mark:] Fix bugs (fixes critical numpy one).
-*   [:heavy_check_mark:] Use SQLAlchemy to support PostgreSQL, SQLite3 DBs as well.
-*   [:heavy_check_mark:] Use Pipenv to allow db credentials via .env file
-*   [:heavy_check_mark:] Support both Python3 and Python2.
-*   [WIP] Use the logging module so as to not litter any user's application with prints.
-*   [:heavy_check_mark:] Reformat code using YAPF (Facebook)
+*   [:heavy_check_mark:] Fix bugs with SQLite. 
+
 
 ## Usage
+
+***
+**SQlite:** <br>
+where <path> is relative: <br>
+`engine = create_engine('sqlite:///foo.db')`
+[Docs](http://docs.sqlalchemy.org/en/latest/core/engines.html#microsoft-sql-server)
+***
 
 1.  Install directly from this repo:
 

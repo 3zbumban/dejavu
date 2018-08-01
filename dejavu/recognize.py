@@ -1,4 +1,7 @@
 from __future__ import absolute_import
+
+import logging
+
 import dejavu.fingerprint as fingerprint
 import dejavu.decoder as decoder
 import numpy as np
@@ -97,6 +100,7 @@ class MicrophoneRecognizer(BaseRecognizer):
 
     def recognize_recording(self):
         if not self.recorded:
+            logging.error("NoRecordingError @")
             raise NoRecordingError("Recording was not complete/begun")
         return self._recognize(*self.data)
 

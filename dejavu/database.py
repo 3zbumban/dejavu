@@ -1,11 +1,15 @@
 from __future__ import absolute_import
 import binascii
+import logging
 
-from sqlalchemy import create_engine, Column, Integer, String, Boolean, Binary, ForeignKey, UniqueConstraint
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql.schema import Column, ForeignKey, UniqueConstraint
+from sqlalchemy.types import Integer, String, Boolean, Binary
+from sqlalchemy.orm.session import sessionmaker
+from sqlalchemy.ext.declarative.api import declarative_base
+from sqlalchemy import create_engine
 
 Base = declarative_base()
+SQLite_MAXS = 950     # maximum of colums in sqlite
 
 
 class Song(Base):
@@ -30,13 +34,18 @@ class Fingerprint(Base):
     unique = UniqueConstraint('hash', 'song_id', 'offset')
 
 
+def chunker(l, n=950):
+    for i in range(0, len(l), n):
+        yield l[i:i+n]
+
+
 class Database(object):
     def __init__(self, url):
         super(Database, self).__init__()
         self.url = url
         self.engine = create_engine(url)
-        self.session = sessionmaker(bind=self.engine)()
         Base.metadata.create_all(self.engine)
+        self.session = sessionmaker(bind=self.engine)()
 
         # clean by deleting not fully fingerprinted songs; possibly because of abruptly killed previous run
         self.session.query(Song).filter(Song.fingerprinted.is_(False)).delete()
@@ -118,8 +127,14 @@ class Database(object):
         # Get an iterable of all the hashes we need
         values = [binascii.unhexlify(h) for h in mapper.keys()]
 
-        for fingerprint in self.session.query(Fingerprint).filter(
-            Fingerprint.hash.in_(values)
-        ):
-            hash = binascii.hexlify(fingerprint.hash).upper().decode('utf-8')
-            yield (fingerprint.song_id, fingerprint.offset - mapper[hash])
+        # foo = self.session.query(Fingerprint).filter(Fingerprint.hash.in_(values))
+        # make list of lists withj value, maximum 950 vor SQLite
+        liste = list(chunker(values, SQLite_MAXS))
+        logging.debug("listen anzahl:" + str(liste.__len__()))
+        logging.debug("Using chunked lists [950] hashes * [" + str(liste.__len__()) + "] = " + str(950*liste.__len__()))
+
+        for el in liste:    # maximum size of list (el) is 950 due to sqlite
+                            # (see: https://www.sqlite.org/limits.html#max_column)
+            for fingerprint in self.session.query(Fingerprint).filter(Fingerprint.hash.in_(el)):
+                hash = binascii.hexlify(fingerprint.hash).upper().decode('utf-8')
+                yield (fingerprint.song_id, fingerprint.offset - mapper[hash])
