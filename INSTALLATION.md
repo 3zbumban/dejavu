@@ -60,4 +60,6 @@ sudo pip install MySQL-python
 sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
 ```
 
-However installing `portaudio` and/or `ffmpeg` from source is also doable. 
+However installing `portaudio` and/or `ffmpeg` from source is also doable.
+
+1. ffmpeg: 
