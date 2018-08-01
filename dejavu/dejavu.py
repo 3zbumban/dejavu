@@ -71,7 +71,7 @@ class Dejavu(object):
             # don't refingerprint already fingerprinted files
             if decoder.unique_hash(filename) in self.songhashes_set:
                 logger.info(
-                    "%s already fingerprinted, continuing..." % filename
+                    "skipping: %s already fingerprinted, continuing..." % filename
                 )
                 continue
 
@@ -116,7 +116,7 @@ class Dejavu(object):
         song_name = song_name or songname
         # don't refingerprint already fingerprinted files
         if song_hash in self.songhashes_set:
-            logger.info("%s already fingerprinted, continuing..." % song_name)
+            logger.info("skipping: %s already fingerprinted, continuing..." % song_name)
         else:
             song_name, hashes, file_hash = _fingerprint_worker(
                 filepath, self.limit, song_name=song_name
