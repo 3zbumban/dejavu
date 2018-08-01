@@ -20,4 +20,4 @@
 ##### Command Line usage:
 `commin soon...`    <br>
 
-maintained by **3zbumban** __free4allcoding@gmai.com__
+<sub>maintained by **3zbumban** __free4allcoding@gmai.com__</sub>
