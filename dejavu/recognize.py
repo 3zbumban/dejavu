@@ -9,6 +9,8 @@ import pyaudio
 import time
 from six.moves import range
 
+logger = logging.getLogger(__name__)
+
 
 class BaseRecognizer(object):
     def __init__(self, dejavu):
@@ -38,7 +40,7 @@ class FileRecognizer(BaseRecognizer):
 
         if match:
             match['match_time'] = t
-        logging.debug("Recognizig using file. Match: %s" % match)
+        logger.debug("Recognizig using file. Match: %s" % match)
         return match
 
     def recognize(self, filename):
@@ -100,7 +102,7 @@ class MicrophoneRecognizer(BaseRecognizer):
 
     def recognize_recording(self):
         if not self.recorded:
-            logging.error("NoRecordingError @")
+            logger.error("NoRecordingError @")
             raise NoRecordingError("Recording was not complete/begun")
         return self._recognize(*self.data)
 

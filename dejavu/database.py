@@ -8,6 +8,7 @@ from sqlalchemy.orm.session import sessionmaker
 from sqlalchemy.ext.declarative.api import declarative_base
 from sqlalchemy import create_engine
 
+logger = logging.getLogger(__name__)
 Base = declarative_base()
 SQLite_MAXS = 950     # maximum of colums in sqlite
 
@@ -130,8 +131,8 @@ class Database(object):
         # foo = self.session.query(Fingerprint).filter(Fingerprint.hash.in_(values))
         # make list of lists withj value, maximum 950 vor SQLite
         liste = list(chunker(values, SQLite_MAXS))
-        logging.debug("listen anzahl:" + str(liste.__len__()))
-        logging.debug("Using chunked lists [950] hashes * [" + str(liste.__len__()) + "] = " + str(950*liste.__len__()))
+        logger.debug("listen anzahl:" + str(liste.__len__()))
+        logger.debug("Using chunked lists [950] hashes * [" + str(liste.__len__()) + "] = " + str(950*liste.__len__()))
 
         for el in liste:    # maximum size of list (el) is 950 due to sqlite
                             # (see: https://www.sqlite.org/limits.html#max_column)

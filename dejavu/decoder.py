@@ -47,7 +47,7 @@ def read(filename, limit=None):
     of the file by specifying the `limit` parameter. This is the amount of
     seconds from the start of the file.
 
-    returns: (channels, samplerate)
+    returns: (channels, sampleraten unikue_hash_of:filename)
     """
     # pydub does not support 24-bit wav files, use wavio when this occurs
     try:
