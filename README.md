@@ -1,6 +1,6 @@
 # dejavu3
 * [How it works](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)
-* Read [INSTALLATION.md](INSTALLATION.md)
+* **Read [INSTALLATION.md]**(INSTALLATION.md)
 ## This fork attempts to:
 * [:heavy_check_mark:] Fix bugs with SQLite.
 * [:heavy_check_mark:] Python3 focus
@@ -14,11 +14,7 @@
 - recognizing mp3
 - recognizing wav
 
-## Instalation:
-1. Install [ffmpeg](https://www.ffmpeg.org/)
-2. `pip install -r requirements.txt`
 ## Usage:
-
 ##### Import Usage:
 `commin soon...`    <br>
 ##### Command Line usage:
