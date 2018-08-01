@@ -15,10 +15,10 @@
 - recognizing wav
 
 ## Usage:
-##### Import Usage:
-`commin soon...`    <br>
-##### Command Line usage:
-`commin soon...`    <br>
+* ##### Import Usage:
+  `commin soon...`    <br>
+* ##### Command Line usage:
+  `commin soon...`    <br>
 
-##### [check other forks](http://forked.yannick.io/worldveil/dejavu)
+* ##### [check other forks](http://forked.yannick.io/worldveil/dejavu)
 <sub><sup>maintained by **3zbumban** __free4allcoding@gmai.com__</sup></sub>
