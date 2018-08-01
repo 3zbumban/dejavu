@@ -20,4 +20,5 @@
 ##### Command Line usage:
 `commin soon...`    <br>
 
-maintained by **3zbumban** __free4allcoding@gmai.com__
+##### [check other forks](http://forked.yannick.io/worldveil/dejavu)
+<sub><sup>maintained by **3zbumban** __free4allcoding@gmai.com__</sup></sub>
