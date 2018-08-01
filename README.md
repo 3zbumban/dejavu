@@ -6,6 +6,7 @@
 * [WIP] Use logging everywhere
 * [WIP] perfect CLI usage
 * [WIP] large ammouts of files
+* [WIP] documentation
 
 ## Features:
 - using SQLite
