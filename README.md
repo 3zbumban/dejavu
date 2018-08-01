@@ -14,7 +14,11 @@
 - recognizing mp3
 - recognizing wav
 
+## Instalation:
+1. Install [ffmpeg]()
+2. `pip install -r requirements.txt`
 ## Usage:
+
 ##### Import Usage:
 `commin soon...`    <br>
 ##### Command Line usage:
