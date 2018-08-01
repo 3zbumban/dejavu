@@ -38,7 +38,7 @@ class FileRecognizer(BaseRecognizer):
 
         if match:
             match['match_time'] = t
-
+        logging.debug("Recognizig using file. Match: %s" % match)
         return match
 
     def recognize(self, filename):
