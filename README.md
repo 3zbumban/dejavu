@@ -15,7 +15,7 @@
 - recognizing wav
 
 ## Instalation:
-1. Install [ffmpeg]()
+1. Install [ffmpeg](https://www.ffmpeg.org/)
 2. `pip install -r requirements.txt`
 ## Usage:
 
