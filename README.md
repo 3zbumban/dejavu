@@ -2,12 +2,12 @@
 * [**How it works**](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)
 * **Read** [**INSTALLATION.md**](INSTALLATION.md)
 ## This fork attempts to:
-* [:heavy_check_mark:] Fix bugs with SQLite.
-* [:heavy_check_mark:] Python3 focus
-* [WIP] Use logging everywhere
-* [WIP] perfect CLI usage
-* [WIP] large ammouts of files
-* [WIP] documentation
+* [x] Fix bugs with SQLite.
+* [x] Python3 focus
+* [ ] Use logging everywhere
+* [ ] perfect CLI usage
+* [ ] large ammouts of files
+* [ ] documentation
 
 ## Features:
 - using SQLite
