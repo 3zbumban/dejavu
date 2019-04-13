@@ -1,6 +1,6 @@
 # dejavu3
 
-**currently not working under Python 3.7 due to compatability issues with PyAdio, try to use Python <= 3.6**
+**currently not working under Python 3.7 due to compatability issues with PyAudio, try to use Python <= 3.6**
 
 * [**How it works**](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)
 * **Read** [**INSTALLATION.md**](INSTALLATION.md)
