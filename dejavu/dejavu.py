@@ -16,9 +16,9 @@ from six.moves import zip
 logger = logging.getLogger(__name__)
 
 
-def loggerer(levl=False):
+def logging_option(levl=False):
     """
-    Universal logging loader
+    Logging aktiviren
     :param levl: True => DEBUG mode, else INFO mode, default false
     """
     if levl:
@@ -55,6 +55,13 @@ class Dejavu(object):
             self.songhashes_set.add(song_hash)
 
     def fingerprint_directory(self, path, extensions, nprocesses=None):
+        """
+        Function do fingerprint a Diretory
+        :param path: Path to dir
+        :param extensions: list of extensions [".mp3", ".wav"]
+        :param nprocesses: numper of processes default: None, suggestet 5
+        :return: None
+        """
         # Try to use the maximum amount of processes if not given.
         try:
             nprocesses = nprocesses or multiprocessing.cpu_count()
@@ -67,7 +74,7 @@ class Dejavu(object):
 
         filenames_to_fingerprint = []
         for filename, _ in decoder.find_files(path, extensions):
-            logger.info("processing: %s" % filename)
+            logger.debug("processing: %s" % filename)
             # don't refingerprint already fingerprinted files
             if decoder.unique_hash(filename) in self.songhashes_set:
                 logger.info(
@@ -182,6 +189,21 @@ class Dejavu(object):
     def recognize(self, recognizer, *options, **kwoptions):
         r = recognizer(self)
         return r.recognize(*options, **kwoptions)
+
+    def print_songs(self, bol=False):
+        """
+        Method to print out all songs
+        :return: List of songs
+        """
+        liste = []
+        for song in self.db.get_songs():
+            if bol:
+                text = "| id: {:>5} | sha1: {:>12} | name: {:>13}".format(song.id, binascii.hexlify(
+                                                                          song.file_sha1).upper().decode('utf-8'),
+                                                                          song.name)
+                logger.debug(text)
+            liste.append(song)
+        return liste
 
 
 def _fingerprint_worker(filename, limit=None, song_name=None):

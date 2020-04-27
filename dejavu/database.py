@@ -129,10 +129,9 @@ class Database(object):
         values = [binascii.unhexlify(h) for h in mapper.keys()]
 
         # foo = self.session.query(Fingerprint).filter(Fingerprint.hash.in_(values))
-        # make list of lists withj value, maximum 950 vor SQLite
+        # make list of lists with contain former values of valoe (maximum 950 per list)
         liste = list(chunker(values, SQLite_MAXS))
-        logger.debug("listen anzahl:" + str(liste.__len__()))
-        logger.debug("Using chunked lists [950] hashes * [" + str(liste.__len__()) + "] = " + str(950*liste.__len__()))
+        logger.debug("number of lists after devide to 950sets: %s" % liste.__len__())
 
         for el in liste:    # maximum size of list (el) is 950 due to sqlite
                             # (see: https://www.sqlite.org/limits.html#max_column)

@@ -8,6 +8,7 @@
 * [WIP] perfect CLI usage
 * [WIP] large ammouts of files
 * [WIP] documentation
+* [WIP] focus on short samples
 
 ## Features:
 - using SQLite
